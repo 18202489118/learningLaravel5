@@ -17,6 +17,16 @@ ollapse" data-target="#app-navbar-collapse">
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
+                <li class="{{ active_class(if_route('topics.index')) }}"><a href="{{ route('topics.index') }}">话题</a>
+                </li>
+                <li class="{{ active_class((if_route('categories.show') && if_route_param('category', 1))) }}"><a
+                            href="{{ route('categories.show', 1) }}">分享</a></li>
+                <li class="{{ active_class((if_route('categories.show') && if_route_param('category', 2))) }}"><a
+                            href="{{ route('categories.show', 2) }}">教程</a></li>
+                <li class="{{ active_class((if_route('categories.show') && if_route_param('category', 3))) }}"><a
+                            href="{{ route('categories.show', 3) }}">问答</a></li>
+                <li class="{{ active_class((if_route('categories.show') && if_route_param('category', 4))) }}"><a
+                            href="{{ route('categories.show', 4) }}">公告</a></li>
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
@@ -25,6 +35,11 @@ ollapse" data-target="#app-navbar-collapse">
                     <li><a href="{{ route('login') }}">登录</a></li>
                     <li><a href="{{ route('register') }}">注册</a></li>
                 @else
+                    <li>
+                        <a href="{{ route('topics.create') }}">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </a>
+                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
  <span class="user-avatar pull-left" style="margin-right:8px; margin-top:-5px;">
@@ -33,6 +48,12 @@ ollapse" data-target="#app-navbar-collapse">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ route('users.show', Auth::id()) }}">
+                                    <span class="glyphicon glyphicon-user" ariahidden="true"></span>
+                                    个人中心
+                                </a>
+                            </li>
                             <li>
                                 <a href="{{ route('users.edit', Auth::id()) }}">
                                     编辑资料

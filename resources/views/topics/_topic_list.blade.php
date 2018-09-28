@@ -3,7 +3,7 @@
         @foreach ($topics as $topic)
             <li class="media">
                 <div class="media-left">
-                    <a href="{{ route('users.show', [$topic->user_id]) }}">
+                    <a href="{{  $topic->link() }}">
                         <img class="media-object img-thumbnail" style="width: 52px; height: 52px;"
                              src="{{ $topic->user->avatar }}" title="{{ $topic->user->name
  }}">
@@ -11,11 +11,11 @@
                 </div>
                 <div class="media-body">
                     <div class="media-heading">
-                        <a href="{{ route('topics.show', [$topic->id]) }}"
+                        <a href="{{  $topic->link() }}"
                            title="{{ $topic->title }}">
                             {{ $topic->title }}
                         </a>
-                        <a class="pull-right" href="{{ route('topics.show', [$topic->id]) }}">
+                        <a class="pull-right" href="{{  $topic->link() }}">
                             <span class="badge"> {{ $topic->reply_count }} </span>
                         </a>
                     </div>
