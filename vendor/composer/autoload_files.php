@@ -25,4 +25,5 @@ return array(
     '5e8fe2a5ffaded85af682684fe3bbf5a' => $vendorDir . '/mews/captcha/src/helpers.php',
     'cb61d74ad51d00867155534456b38b23' => $vendorDir . '/mews/purifier/src/helpers.php',
     'f960e77410032f236cef8c56617b313e' => $vendorDir . '/overtrue/laravel-lang/src/helpers.php',
+    '377b22b161c09ed6e5152de788ca020a' => $vendorDir . '/spatie/laravel-permission/src/helpers.php',
 );
