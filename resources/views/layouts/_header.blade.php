@@ -40,6 +40,14 @@ ollapse" data-target="#app-navbar-collapse">
                             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('notifications.index') }}" class="notifications-badge"
+                           style="margin-top: -2px;">
+ <span class="badge badge-{{ Auth::user()->notification_count > 0 ? 'hint' : 'fade' }} " title="消息提醒">
+ {{ Auth::user()->notification_count }}
+ </span>
+                        </a>
+                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
  <span class="user-avatar pull-left" style="margin-right:8px; margin-top:-5px;">
